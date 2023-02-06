@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "test:promise":"tsc src/promise/promise.ts && promises-aplus-tests-refreshed src/promise/promise.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^18.11.19",
+    "promises-aplus-tests": "^2.1.2",
+    "promises-aplus-tests-refreshed": "^2.3.3",
+    "typescript": "^4.9.5",
     "vitest": "^0.28.3"
   }
 }
