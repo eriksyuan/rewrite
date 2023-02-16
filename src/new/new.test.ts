@@ -9,8 +9,18 @@ test("new", () => {
     this.year = year;
   }
 
+ 
+
   const car1 = myNew(Car,"audi","model","year")
 
   expect(car1.make).toBe("audi")
   expect(car1.__proto__ === Car.prototype).toBe(true)
+
+  function Bar(){
+    return {
+      name: "bar"
+    }
+  }
+  let bar = myNew(Bar)
+  expect(bar.name).toBe("bar")
 });

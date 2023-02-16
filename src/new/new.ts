@@ -3,7 +3,10 @@ export function myNew<T extends (...args: any[]) => any>(
   fn: T,
   ...args: ArgumentsType<T>
 ) {
-  let obj = Object.create(fn.prototype);
+  const obj = {}
+  // Object.setPrototypeOf(obj, fn.prototype)
+  // obj.__proto__ = fn.prototype
+  // const obj = Object.create(fn.prototype);
   const res = fn.call(obj, ...args);
   if(typeof res === 'object'){
     return res
